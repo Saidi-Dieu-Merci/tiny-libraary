@@ -1,36 +1,84 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+📚 Tiny Library
+A full‑stack Next.js + SQLite application that lets users browse, search, and filter books by category. Built with TypeScript, Tailwind CSS, and server components.
+🚀 Features
+Book catalog: Grid of book cards with images, authors, categories, and likes
 
-## Getting Started
+Categories navigation: Sidebar with dynamic category links
 
-First, run the development server:
+Search: Improved search form to filter books by title or author
 
-```bash
+Responsive UI: Tailwind CSS for clean, mobile‑friendly layouts
+
+Database seeding: SQLite seeded with categories and books via TypeScript scripts
+
+TypeScript safety: Strong typing for Book and Category models
+
+🛠 Tech Stack
+Next.js 14 (App Router, Server Components)
+
+TypeScript
+
+SQLite for persistent storage
+
+Tailwind CSS for styling
+
+ts-node + tsconfig-paths for running seed scripts with path aliases
+
+📂 Project Structure
+Code
+├── app/
+│   └── books/
+│       └── page.tsx        # Books page
+├── components/
+│   ├── BookCard.tsx        # Single book card
+│   ├── BooksGrid.tsx       # Grid layout
+│   ├── CategoriesNav.tsx   # Sidebar navigation
+│   └── SearchForm.tsx      # Search form
+├── lib/
+│   ├── db.ts               # SQLite connection
+│   ├── books.ts            # getBooks() query
+│   ├── categories.ts       # getCategories() query
+│   └── types.ts            # TypeScript models
+├── lib/seeds/
+│   ├── seed_categories.ts  # Seed categories
+│   └── seed_books.ts       # Seed books
+├── data/
+│   ├── categories.json     # Category seed data
+│   └── books.json          # Book seed data
+⚙️ Setup & Installation
+Clone the repo:
+
+bash
+git clone https://github.com/yourusername/tiny-library.git
+cd tiny-library
+Install dependencies:
+
+bash
+npm install
+Run database seeds:
+
+bash
+npm run seed
+Start the dev server:
+
+bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+🌟 Future Improvements
+Live search with instant filtering
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Book detail pages with extended info
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Pagination or infinite scroll for large datasets
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Deploy on Vercel for easy sharing
 
-## Learn More
+✨ Learnings
+This project helped me practice:
 
-To learn more about Next.js, take a look at the following resources:
+Debugging TypeScript + Next.js alias issues
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Writing seed scripts for SQLite
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Building responsive layouts with Tailwind
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Handling runtime errors gracefully with prop typing and guards
