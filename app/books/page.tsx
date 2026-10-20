@@ -14,7 +14,7 @@ export default async function BooksPage({
   return (
     <div className="pt-28">
       <SearchForm />
-      <BooksGrid books={books} />
+      <BooksGrid books={books} categoryName="All Books" />
     </div>
   );
 }

@@ -6,7 +6,7 @@ export default function BooksGrid({
   categoryName,
 }: {
   books: Book[];
-  categoryName: string;
+  categoryName?: string; // ← the ? makes it optional
 }) {
   return (
     <div className="container px-4 py-8 pt-28 mx-auto">
